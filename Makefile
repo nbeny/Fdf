@@ -13,7 +13,7 @@
 NAME	=	fdf
 
 N_INC	=	fdf.h
-N_SRC	=	main.c
+N_SRC	=	main.c free.c
 
 CC	=	gcc
 CC_FLAG	=	-g -Wall -Wextra -Werror
@@ -28,7 +28,7 @@ I_LFT	=	./libft/include/
 I_PTF	=	./ft_printf/include/
 L_LFT	=	-L ./ft_printf/libft/ -lft
 L_PTF	=	-L ./ft_printf/ -lftprintf
-MLX		=	-I /usr/X11/include -L /usr/X11/lib -lX11 -lmlx -lXext
+MLX		=	-lmlx -framework OpenGL -framework AppKit
 
 CL_N	=	\033[0m
 CL_R	=	\033[31m
