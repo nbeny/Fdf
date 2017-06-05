@@ -72,6 +72,7 @@ int		main(int ac, char **av)
 		return (-1);
 	if ((map = ft_init_map()) == NULL)
 		return (-1);
+	ft_printf(0, "toto");
 	ft_fdf(mlx, map);
 	return (0);
 }

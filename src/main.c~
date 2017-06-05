@@ -103,8 +103,8 @@ void	ft_trace_x(t_coor *c)
 	int	x;
 	int	y;
 
-	x = c->x - PIX;
-	y = c->y - PIX;
+	x = c->x - PIX_X;
+	y = c->y - PIX_Y;
 	while (x != c->x && y != c->y)
 	{
 		x++;
@@ -160,12 +160,12 @@ int		main(int ac, char **av)
 				x = c->x;
 			mlx_pixel_put(c->mlx, c->win, x, c->y, 0xFFFFFF);
 			ft_trace_y(c->x);
-			c->x = c->x + PIX;
-			c->y = c->y + PIX;
+			c->x = c->x + PIX_X;
+			c->y = c->y + PIX_Y;
 			ft_trace_x(c);
 		}
-		c->x = START_X - (c->j * PIX);
-		c->y = START_Y + (c->j * PIX) / 2;
+		c->x = START_X - (c->j * PIX_X);
+		c->y = START_Y + (c->j * PIX_Y) / 2;
 		c->j++;
 		ft_free_tabstr(c->powa);
 		ft_strdel(&line);

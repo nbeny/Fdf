@@ -13,7 +13,7 @@
 NAME	=	fdf
 
 N_INC	=	fdf.h
-N_SRC	=	main2.c trace.c free.c
+N_SRC	=	main.c trace.c free.c
 
 CC	=	gcc
 CC_FLAG	=	
