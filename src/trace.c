@@ -49,7 +49,7 @@ void	ft_trace_y(int xi,int yi,int xf,int yf, t_env *env)
 	mlx_pixel_put(env->mlx, env->win, x, y, 0xFFFFFF);
 	if (dx > dy)
 	{
-		cumul = dx >> 2;
+		cumul = dx / 2;
 		i = 1;
 		while (i++ <= dx)
 		{
@@ -65,7 +65,7 @@ void	ft_trace_y(int xi,int yi,int xf,int yf, t_env *env)
 	}
 	else
 	{
-		cumul = dy >> 2;
+		cumul = dy / 2;
 		i = 1;
 		while (i++ <= dy)
 		{
@@ -104,7 +104,7 @@ void    ft_ttrace_y(t_m *m, t_env *env)
     int     j;
 
     x = m->x - (m->j * PIX);
-    y = m->y - ((m->j * PIX) >> 2);
+    y = m->y - ((m->j * PIX) / 2);
     i = m->x;
     j = m->y;
     while (i != x && j != y)

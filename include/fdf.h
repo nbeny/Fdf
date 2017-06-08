@@ -12,11 +12,11 @@
 
 #ifndef MINISHELL_H
 # define MINISHELL_H
-# define WIN_X 1200
-# define WIN_Y 1000
+# define WIN_X 800
+# define WIN_Y 600
 # define PIX 10
-# define START_X 600
-# define START_Y 500
+# define START_X 400
+# define START_Y 50
 # include "../ft_printf/include/ft_printf.h"
 # include "../minilibx/mlx.h"
 # include <stdlib.h>

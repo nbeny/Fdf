@@ -24,7 +24,6 @@ t_tab	*ft_stock(t_env *env, t_m *m)
 	}
 	if ((tab = ft_make_x_y(tab, m)) == NULL)
 		return (NULL);
-	close(env->fd);
 	return (tab);
 }
 
@@ -39,33 +38,35 @@ void	ft_fdf(t_env *env, t_tab *tab, t_m *m)
 	b = NULL;
 	s = tab;
 	j = 1;
-	while (s->next != NULL)
+	while (s != NULL)
 	{
-		i = -1;
-		while (s->split[++i] != NULL)
+		i = 0;
+//		ft_printf(0, "[%s]lol\n", s->split[i]);
+		while (s->split[i] != NULL)
 		{
-			ft_putstr(s->split[i]);
-			ft_putchar(' ');
-			if (ft_atoi(s->split[i]) != 0)
-				y = m->y - ft_atoi(s->split[i]);
-			else
+//			ft_printf(0, "[%i]\n", i);
+//			if (s->split[i] && ft_atoi(s->split[i]) != 0)
+//				y = m->y - ft_atoi(s->split[i]);
+//			else
 				y = m->y;
 			s->x[i] = m->x;
 			s->y[i] = y;
 			mlx_pixel_put(env->mlx, env->win, m->x, y, 0xFFFFFF);
-			if (ft_atoi(s->split[i]) == 0)
-				ft_ttrace_y(m, env);
-			else if (i != 0)
-				ft_trace_y(s->x[i - 1], s->y[i - 1], m->x, y, env);
+//			if (s->split[i] && ft_atoi(s->split[i]) == 0)
+//				ft_ttrace_y(m, env);
+//			if (i != 0)
+//				ft_trace_y(s->x[i - 1], s->y[i - 1], m->x, y, env);
 			m->x = m->x + PIX;
 			m->y = m->y + PIX;
-			if (ft_atoi(s->split[i]) == 0)
-				ft_ttrace_x(m, env);
-			else if (i != 0 && b != NULL)
-				ft_trace_x(b->x[i], b->y[i], m->x, y, env);
+//			if (s->split[i] && ft_atoi(s->split[i]) == 0)
+//				ft_ttrace_x(m, env);
+//			if (i != 0 && b != NULL)
+//				ft_trace_x(b->x[i], b->y[i], m->x, y, env);
+			i++;
 		}
+//		ft_printf(0, "[%i]\n", i);
 		m->x = START_X - (j * PIX);
-		m->y = START_Y + ((j * PIX) >> 2);
+		m->y = START_Y + ((j * PIX) / 2);
 		j++;
 		b = s;
 		s = s->next;

@@ -73,14 +73,14 @@ int		main(int ac, char **av)
 	}
 	ft_count_size(tab, m);
 	ft_fdf(env, tab, m);
-	while (tab != NULL)
+/*	while (tab != NULL)
 	{
 		m->i = 0;
 		while (tab->split[m->i++] != NULL)
 			ft_printf(0, "%s ", tab->split[m->i]);
 		ft_putstr("\n");
 		tab = tab->next;
-		}
+	}*/
 	mlx_loop(env->mlx);
 	return (0);
 }
