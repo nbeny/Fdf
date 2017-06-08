@@ -13,9 +13,9 @@
 NAME	=	fdf
 
 N_INC	=	fdf.h
-N_SRC	=	main2.c trace.c free.c
+N_SRC	=	main2.c trace.c free.c core.c tools.c
 
-CC	=	gcc
+CC	=	gcc -g -Wall -Wextra -Werror
 CC_FLAG	=	
 
 T_SRC	=	./src/
@@ -66,7 +66,7 @@ $(NAME): $(OBJ)
 	@echo ">$(CL_V)Build: $(CL_VG)ft_printf$(CL_N)"
 	@make -C $(T_PTF)
 	@echo ">$(CL_V)Build: $(CL_VG)$(NAME)$(CL_N)"
-	@$(CC) $(CC_FLAG) $(MLX) -o $(NAME) $(OBJ) $(L_LFT) $(L_PTF) $(MLX)
+	@$(CC) $(CC_FLAG) $(MLX) -o $(NAME) $(OBJ) $(L_LFT) $(L_PTF) $(MLXX)
 
 $(T_OBJ)%.o: $(T_SRC)%.c
 	@echo ">$(CL_V)Creat: Objects files..$(CL_N)"

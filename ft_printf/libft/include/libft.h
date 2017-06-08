@@ -125,4 +125,5 @@ char			**ft_multisub(char **s, int start, int end);
 int				ft_countstr(char **s, int c);
 char			**ft_tabstr(char **s, int c);
 int				ft_putnstr_fd(int fd, char *s, size_t n);
+char			**ft_split(char const *s);
 #endif
