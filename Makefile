@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: nbeny <nbeny@student.42.fr>                +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2017/06/11 13:41:33 by nbeny             #+#    #+#              #
+#    Updated: 2017/06/11 13:41:40 by nbeny            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = fdf
 
 # LIBFT
@@ -12,15 +24,15 @@ INCLUDE = -I ./
 
 # MLX
 CC = gcc
-GRAPHLIB = -lmlx -framework openGl -framework AppKit
+GRAPHLIB = -L ./minilibx -lmlx -framework openGl -framework AppKit
 LIBX =	-I /usr/X11/include -L /usr/X11/lib -lX11 -lmlx -lXext
 
-LIBS = $(LFT) $(LIBX)
+LIBS = $(LFT) $(GRAPHLIB)
 INCLUDES = $(INCLUDE) $(LFTIPATH) $(GRAPHINC)
 
 
 BASEFLAGS = -Wall -Wextra
-CFLAGS = $(BASEFLAGS) -Werror -O2
+CFLAGS = $(BASEFLAGS) -Werror
 
 
 LFTCALL = all
