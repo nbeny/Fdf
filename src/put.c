@@ -41,16 +41,16 @@ int		ft_put_fdf(t_env *e)
 	mlx_clear_window(e->mlx, e->win);
 	while (++i < e->s_y)
 	{
-		j = 1;
+		j = -1;
 		while (++j < e->s_x)
 		{
-			mlx_pixel_put(e->mlx, e->win, e->loop[i][j]->x, e->loop[i][j]->y, 0xFFFFFF);
+			mlx_pixel_put(e->mlx, e->win, e->loop[i][j].x, e->loop[i][j].y, 0xFFFFFF);
 			if (j != (e->s_x - 1))
-				ft_draw_line(*e->loop[i][j], *e->loop[i][j + 1], e);
+				ft_draw_line(e->loop[i][j], e->loop[i][j + 1], e);
 			if (i != (e->s_y - 1))
-				ft_draw_line(*e->loop[i + 1][j], *e->loop[i][j], e);
+				ft_draw_line(e->loop[i + 1][j], e->loop[i][j], e);
 		}
 	}
-	ft_draw_line((t_3d){e->xi,e->yi}, (t_3d){e->xf,e->yf}, e);
+//	ft_draw_line((t_3d){e->xi,e->yi}, (t_3d){e->xf,e->yf}, e);
 	return (1);
 }

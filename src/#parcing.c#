@@ -101,11 +101,11 @@ int		ft_loop_3d(t_env *e)
 			return (0);
 		j = -1;
 		e->loop[i][0] = ft_new_loop(e->x, e->y, e->mapi[i][0]);
-		while (++j < e->s_x)
+		while (++j <= e->s_x)
 		{
 			e->x += PIX;
 			e->y += PIX;
-			e->loop[i][j + 1] = ft_new_loop(e->x, e->y, e->mapi[i][j + 1]);
+			e->loop[i][j + 1] = ft_new_loop(e->x, e->y, e->mapi[i][j]);
 			ft_printf(0, "[%i][%i]\n", e->loop[i][j].x,\
 					  e->loop[i][j].y);
 			ft_printf(0, "[%i][%i]\n", i, j);			

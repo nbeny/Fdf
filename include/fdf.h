@@ -33,7 +33,7 @@ typedef struct	s_env
 	int			**mapi;
 	int			s_y;
 	int			s_x;
-	struct s_3d	***loop;
+	struct s_3d	**loop;
 	int			x;
 	int			y;
 	int			z;
@@ -72,12 +72,11 @@ int		main(int ac, char **av);
 int		ft_parce_arguments(char **av);
 int		*ft_char_to_int(char *str);
 int		ft_transform_map(t_env *e, char **av);
-t_3d	*ft_new_loop(int x, int y, int z);
+t_3d	ft_new_loop(int x, int y, int z);
 int		ft_loop_3d(t_env *e);
 /*
 **put
 */
-void	ft_segment(t_3d *i, t_3d *f, t_env *e);
 int		ft_put_fdf(t_env *e);
 /*
 **tools
