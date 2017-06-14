@@ -13,7 +13,7 @@
 NAME	=	fdf
 
 N_INC	=	fdf.h
-N_SRC	=	main2.c trace.c free.c core.c tools.c
+N_SRC	=	main.c parcing.c put.c utils.c
 
 CC	=	gcc -g -Wall -Wextra -Werror
 CC_FLAG	=	
@@ -28,8 +28,7 @@ I_LFT	=	./libft/include/
 I_PTF	=	./ft_printf/include/
 L_LFT	=	-L ./ft_printf/libft/ -lft
 L_PTF	=	-L ./ft_printf/ -lftprintf
-MLX		=	-lmlx -framework OpenGL -framework AppKit
-MLXX	=	-I /usr/X11/include -L /usr/X11/lib -lX11 -lmlx -lXext
+MLX		=	-L ./minilibx -lmlx -framework OpenGL -framework AppKit
 
 CL_N	=	\033[0m
 CL_R	=	\033[31m
@@ -66,7 +65,7 @@ $(NAME): $(OBJ)
 	@echo ">$(CL_V)Build: $(CL_VG)ft_printf$(CL_N)"
 	@make -C $(T_PTF)
 	@echo ">$(CL_V)Build: $(CL_VG)$(NAME)$(CL_N)"
-	@$(CC) $(CC_FLAG) $(MLX) -o $(NAME) $(OBJ) $(L_LFT) $(L_PTF) $(MLXX)
+	@$(CC) $(CC_FLAG) $(MLX) -o $(NAME) $(OBJ) $(L_LFT) $(L_PTF) $(MLX)
 
 $(T_OBJ)%.o: $(T_SRC)%.c
 	@echo ">$(CL_V)Creat: Objects files..$(CL_N)"

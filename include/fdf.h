@@ -13,80 +13,68 @@
 #ifndef MINISHELL_H
 # define MINISHELL_H
 # define WIN_X 1200
-# define WIN_Y 1000
-# define PIX 10
-# define START_X 600
-# define START_Y 500
+# define WIN_Y 900
+# define PIX 20
+# define DOT_X (WIN_X / 2)
+# define DOT_Y (WIN_Y / e->s_y)
 # include "../ft_printf/include/ft_printf.h"
 # include "../minilibx/mlx.h"
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
 # include <fcntl.h>
-# include <math.h> 
+# include <math.h>
+# include <sys/stat.h>
 
 typedef struct	s_env
 {
-	void	*mlx;
-	void	*win;
-	char	*line;
-	char	**split;
-	int		fd;
+	void		*mlx;
+	void		*win;
+	int			**mapi;
+	int			s_y;
+	int			s_x;
+	struct s_3d	***loop;
+	int			x;
+	int			y;
+	int			z;
 }				t_env;
 
-typedef struct	s_tab
+typedef struct	s_3d
 {
-	char			**split;
-	int				*x;
-	int				*y;
-	struct s_tab	*next;
-}				t_tab;
+	int		x;
+	int		y;
+}				t_3d;
 
-typedef struct	s_m
+typedef struct	s_pixel
 {
-	int	x;
-	int	y;
-	int	z;
-	int	i;
-	int	j;
-}				t_m;
-
-typedef struct	s_save
-{
-	int	x;
-	int	y;
-	int	z;
-	int	i;
-	int	j;
-}				t_save;
+	double	x;
+	double	y;
+}				t_pixel;
 /*
 **main
 */
-t_env	*ft_init_mlx(char **av);
-t_m		*ft_init_map(void);
-t_save	*ft_init_save(void);
-t_tab	*ft_init_tab(void);
+void	ft_init_fdf(t_env *e);
+int		ft_help(void);
 int		main(int ac, char **av);
 /*
-**core
+**parcing
 */
-t_tab	*ft_stock(t_env *env, t_m *m);
-void	ft_fdf(t_env *env, t_tab *tab, t_m *m);
+int		ft_parce_arguments(char **av);
+int		*ft_char_to_int(char *str);
+int		ft_transform_map(t_env *e, char **av);
+t_3d	*ft_new_loop(int x, int y, int z);
+int		ft_loop_3d(t_env *e);
 /*
-**trace
+**put
 */
-void	ft_trace_x(int xi, int yi, int xf, int yf, t_env *env);
-void	ft_trace_y(int xi, int yi, int xf, int yf, t_env *env);
-void	ft_ttrace_x(t_m *m, t_env *env);
-void	ft_ttrace_y(t_m *m, t_env *env);
-int		ft_ride_around(t_env *env, t_m *m);
+void	ft_segment(t_3d *i, t_3d *f, t_env *e);
+int		ft_put_fdf(t_env *e);
 /*
 **tools
 */
-void	ft_count_size(t_tab *tab, t_m *m);
-t_tab	*ft_make_x_y(t_tab *tab, t_m *m);
+int		ft_len(char *str);
+int		ft_count_rows(char *name);
 /*
 **free
 */
-void	ft_free_tabstr(char **tab);
 #endif
