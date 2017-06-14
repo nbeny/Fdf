@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbeny <nbeny@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/20 10:09:56 by nbeny             #+#    #+#             */
-/*   Updated: 2017/05/20 10:10:52 by nbeny            ###   ########.fr       */
+/*   Updated: 2017/06/14 21:19:22 by jpeg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,10 @@ typedef struct	s_env
 	int			x;
 	int			y;
 	int			z;
+	double xi;
+	double xf;
+	double yi;
+	double yf;
 }				t_env;
 
 typedef struct	s_3d
@@ -44,6 +48,12 @@ typedef struct	s_3d
 	int		x;
 	int		y;
 }				t_3d;
+
+typedef struct	s_inc
+{
+	double		x;
+	double		y;
+}				t_inc;
 
 typedef struct	s_pixel
 {
