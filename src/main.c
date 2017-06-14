@@ -23,21 +23,21 @@ int ft_key_hook(int keycode, t_env *e)
 		e->yf-= 25;
 	else if(keycode == 1)
 		e->yf+= 25;
-		else if(keycode == 0)
-			e->xf-= 25;
-			else if(keycode == 2)
-				e->xf+= 25;
-				if(keycode == 126)
-					e->yi+= 25;
-				else if(keycode == 122)
-					e->yi-= 25;
-					else if(keycode == 123)
-						e->xi-= 25;
-						else if(keycode == 125)
-							e->xi+= 25;
-							if(keycode == 53)
-								exit(1);
-							return(1);
+	else if(keycode == 0)
+		e->xf-= 25;
+	else if(keycode == 2)
+		e->xf+= 25;
+	if(keycode == 126)
+		e->yi+= 25;
+	else if(keycode == 122)
+		e->yi-= 25;
+	else if(keycode == 123)
+		e->xi-= 25;
+	else if(keycode == 125)
+		e->xi+= 25;
+	if(keycode == 53)
+		exit(1);
+	return(1);
 
 }
 

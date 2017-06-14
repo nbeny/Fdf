@@ -14,9 +14,10 @@
 # define MINISHELL_H
 # define WIN_X 1200
 # define WIN_Y 900
-# define PIX 20
+# define PIX 4
+# define AXE_Z 10
 # define DOT_X (WIN_X / 2)
-# define DOT_Y (WIN_Y / e->s_y)
+# define DOT_Y (WIN_Y / 2)
 # include "../ft_printf/include/ft_printf.h"
 # include "../minilibx/mlx.h"
 # include <stdlib.h>
@@ -34,6 +35,7 @@ typedef struct	s_env
 	int			s_y;
 	int			s_x;
 	struct s_3d	**loop;
+	struct s_3d	*floop;
 	int			x;
 	int			y;
 	int			z;

@@ -81,7 +81,7 @@ t_3d	ft_new_loop(int x, int y, int z)
 	t_3d	p;
 
 	p.x = x;
-	p.y = y - z;
+	p.y = y - (z * AXE_Z);
 	return (p);
 }
 
@@ -100,18 +100,16 @@ int		ft_loop_3d(t_env *e)
 		if (!(e->loop[i] = (t_3d *)malloc(sizeof(t_3d) * (e->s_x + 1))))
 			return (0);
 		j = -1;
-		e->loop[i][0] = ft_new_loop(e->x, e->y, e->mapi[i][0]);
+		e->x = DOT_X - (PIX * (i + 1));
+		e->y = (DOT_Y + (PIX * (i + 1))) >> 2;
 		while (++j < e->s_x)
 		{
 			e->x += PIX;
 			e->y += PIX;
-			e->loop[i][j + 1] = ft_new_loop(e->x, e->y, e->mapi[i][j + 1]);
-			ft_printf(0, "[%i][%i]\n", e->loop[i][j].x,\
+			e->loop[i][j] = ft_new_loop(e->x, e->y, e->mapi[i][j]);
+			ft_printf(0, "[%i][%i]\n", e->loop[0][j].x,\
 					  e->loop[i][j].y);
-			ft_printf(0, "[%i][%i]\n", i, j);			
 		}
-		e->x = DOT_X - (PIX * (i + 1));
-		e->y = (DOT_Y + (PIX * (i + 1))) >> 2;
 	}
 	e->loop[i] = NULL;
 	return (1);

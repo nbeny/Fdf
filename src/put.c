@@ -37,7 +37,7 @@ int		ft_put_fdf(t_env *e)
 	int		i;
 	int		j;
 
-	i = 0;
+	i = -1;
 	mlx_clear_window(e->mlx, e->win);
 	while (++i < e->s_y)
 	{
