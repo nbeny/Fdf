@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parcing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nbeny <nbeny@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/06/15 19:14:46 by nbeny             #+#    #+#             */
+/*   Updated: 2017/06/15 19:14:49 by nbeny            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fdf.h"
 
 int		ft_parce_arguments(char **av)
@@ -5,7 +17,10 @@ int		ft_parce_arguments(char **av)
 	struct stat	st;
 
 	if (stat(av[1], &st) == -1)
+	{
+		ft_printf(2, "fdf: please give me a map.\n");
 		exit(EXIT_FAILURE);
+	}
 	if (S_ISREG(st.st_mode) == 1)
 		return (1);
 	else
@@ -35,7 +50,6 @@ int		*ft_char_to_int(char *str)
 			while (*str != ' ' && *str != '\0')
 				str++;
 			i++;
-			
 		}
 	}
 	return (map);
@@ -67,7 +81,6 @@ int		ft_transform_map(t_env *e, char **av)
 		ft_strdel(&line);
 		i++;
 	}
-	e->mapi[i] = NULL;
 	return (1);
 }
 

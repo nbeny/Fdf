@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#ifndef FDF_H
+# define FDF_H
 # define WIN_X 1200
 # define WIN_Y 900
 # define PIX 4
@@ -43,8 +43,8 @@ typedef struct	s_env
 
 typedef struct	s_3d
 {
-	int		x;
-	int		y;
+	int			x;
+	int			y;
 }				t_3d;
 
 typedef struct	s_inc
@@ -55,38 +55,38 @@ typedef struct	s_inc
 /*
 **main
 */
-void	ft_init_fdf(t_env *e);
-int		ft_help(void);
-int		main(int ac, char **av);
+void			ft_init_fdf(t_env *e);
+int				ft_help(void);
+int				main(int ac, char **av);
 /*
 **parcing
 */
-int		ft_parce_arguments(char **av);
-int		*ft_char_to_int(char *str);
-int		ft_transform_map(t_env *e, char **av);
-t_3d	ft_new_loop(int x, int y, int z);
-int		ft_loop_3d(t_env *e);
+int				ft_parce_arguments(char **av);
+int				*ft_char_to_int(char *str);
+int				ft_transform_map(t_env *e, char **av);
+t_3d			ft_new_loop(int x, int y, int z);
+int				ft_loop_3d(t_env *e);
 /*
 **put
 */
-void	ft_draw_l(int steps, t_inc inc, t_3d a, t_env *e);
-void	ft_draw_line(t_3d a, t_3d b, t_env *e);
-int		ft_put_fdf(t_env *e);
+void			ft_draw_l(int steps, t_inc inc, t_3d a, t_env *e);
+void			ft_draw_line(t_3d a, t_3d b, t_env *e);
+int				ft_put_fdf(t_env *e);
 /*
 **tools
 */
-int		ft_len(char *str);
-int		ft_count_rows(char *name);
+int				ft_len(char *str);
+int				ft_count_rows(char *name);
 /*
 **hooks
 */
-int		ft_key_hook(int keycode, t_env *e);
-int		ft_close(void);
-void	ft_mlx(t_env *e);
+int				ft_key_hook(int keycode, t_env *e);
+int				ft_close(void);
+void			ft_mlx(t_env *e);
 /*
 **free
 */
-void	ft_free_int(int	**mapi, int fx);
-void	ft_free_struct(t_3d **loop, int fx);
-void	ft_freestyle(t_env *e);
+void			ft_free_int(int	**mapi, int fx);
+void			ft_free_struct(t_3d **loop, int fx);
+void			ft_freestyle(t_env *e);
 #endif
