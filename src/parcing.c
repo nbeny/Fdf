@@ -22,8 +22,6 @@ int		*ft_char_to_int(char *str)
 	int		max;
 
 	i = 0;
-//	if (!ft_whiledigit(str))
-//		return (NULL);
 	max = ft_len(str);
 	if (!(map = (int *)malloc(sizeof(int) * (max + 1))))
 		return (NULL);
@@ -34,7 +32,6 @@ int		*ft_char_to_int(char *str)
 		else
 		{
 			map[i] = ft_atoi(str);
-			ft_printf(2, "[%i]", map[i]);
 			while (*str != ' ' && *str != '\0')
 				str++;
 			i++;
@@ -59,7 +56,6 @@ int		ft_transform_map(t_env *e, char **av)
 	e->s_x = ft_len(line);
 	if ((e->mapi[i] = ft_char_to_int(line)) == NULL)
 		return (0);
-	ft_putchar('\n');
 	ft_strdel(&line);
 	i++;
 	while (get_next_line(fd, &line))
@@ -68,7 +64,6 @@ int		ft_transform_map(t_env *e, char **av)
 			return (0);
 		if ((e->mapi[i] = ft_char_to_int(line)) == NULL)
 			return (0);
-	ft_putchar('\n');
 		ft_strdel(&line);
 		i++;
 	}
@@ -107,8 +102,6 @@ int		ft_loop_3d(t_env *e)
 			e->x += PIX;
 			e->y += PIX;
 			e->loop[i][j] = ft_new_loop(e->x, e->y, e->mapi[i][j]);
-			ft_printf(0, "[%i][%i]\n", e->loop[0][j].x,\
-					  e->loop[i][j].y);
 		}
 	}
 	e->loop[i] = NULL;

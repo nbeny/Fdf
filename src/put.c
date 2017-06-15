@@ -51,6 +51,5 @@ int		ft_put_fdf(t_env *e)
 				ft_draw_line(e->loop[i + 1][j], e->loop[i][j], e);
 		}
 	}
-//	ft_draw_line((t_3d){e->xi,e->yi}, (t_3d){e->xf,e->yf}, e);
 	return (1);
 }

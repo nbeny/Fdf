@@ -35,14 +35,10 @@ typedef struct	s_env
 	int			s_y;
 	int			s_x;
 	struct s_3d	**loop;
-	struct s_3d	*floop;
 	int			x;
 	int			y;
 	int			z;
-	double xi;
-	double xf;
-	double yi;
-	double yf;
+	int			un;
 }				t_env;
 
 typedef struct	s_3d
@@ -56,12 +52,6 @@ typedef struct	s_inc
 	double		x;
 	double		y;
 }				t_inc;
-
-typedef struct	s_pixel
-{
-	double	x;
-	double	y;
-}				t_pixel;
 /*
 **main
 */
@@ -79,6 +69,8 @@ int		ft_loop_3d(t_env *e);
 /*
 **put
 */
+void	ft_draw_l(int steps, t_inc inc, t_3d a, t_env *e);
+void	ft_draw_line(t_3d a, t_3d b, t_env *e);
 int		ft_put_fdf(t_env *e);
 /*
 **tools
@@ -86,6 +78,15 @@ int		ft_put_fdf(t_env *e);
 int		ft_len(char *str);
 int		ft_count_rows(char *name);
 /*
+**hooks
+*/
+int		ft_key_hook(int keycode, t_env *e);
+int		ft_close(void);
+void	ft_mlx(t_env *e);
+/*
 **free
 */
+void	ft_free_int(int	**mapi, int fx);
+void	ft_free_struct(t_3d **loop, int fx);
+void	ft_freestyle(t_env *e);
 #endif

@@ -13,7 +13,7 @@
 NAME	=	fdf
 
 N_INC	=	fdf.h
-N_SRC	=	main.c parcing.c put.c utils.c
+N_SRC	=	main.c parcing.c put.c utils.c hooks.c free.c
 
 CC	=	gcc -g -Wall -Wextra -Werror
 CC_FLAG	=	

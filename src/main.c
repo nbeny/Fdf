@@ -11,34 +11,6 @@ void	ft_init_fdf(t_env *e)
 	e->x = 0;
 	e->y = 0;
 	e->z = 0;
-	e->xi = 100;
-	e->xf = 150;
-	e->yi = 100;
-	e->yf = 150;
-}
-
-int ft_key_hook(int keycode, t_env *e)
-{
-	if(keycode == 13)
-		e->yf-= 25;
-	else if(keycode == 1)
-		e->yf+= 25;
-	else if(keycode == 0)
-		e->xf-= 25;
-	else if(keycode == 2)
-		e->xf+= 25;
-	if(keycode == 126)
-		e->yi+= 25;
-	else if(keycode == 122)
-		e->yi-= 25;
-	else if(keycode == 123)
-		e->xi-= 25;
-	else if(keycode == 125)
-		e->xi+= 25;
-	if(keycode == 53)
-		exit(1);
-	return(1);
-
 }
 
 int		ft_help(void)
@@ -57,11 +29,6 @@ int		ft_help(void)
 	return (0);
 }
 
-int ft_close()
-{
-	exit(1);
-}
-
 int		main(int ac, char **av)
 {
 	t_env	e;
@@ -76,21 +43,15 @@ int		main(int ac, char **av)
 			ft_printf(2, "usage: ./fdf [map]\n");
 			return (-1);
 		}
-		ft_printf(2, "yeah man\n");
 		if (!ft_transform_map(&e, av))
 		{
 			ft_printf(2, "usage: ./fdf [help]\n");
 			return (-1);
 		}
-		ft_printf(2, "yeah man 2\n");
 		if (!(ft_loop_3d(&e)))
 			return (-1);
-		ft_printf(2, "yeah man 3\n");
-		mlx_loop_hook(e.mlx, ft_put_fdf, &e);
-		mlx_hook(e.win, 2, 0, ft_key_hook, &e);
-		mlx_hook(e.win, 17, 0, ft_close, NULL);
-		mlx_expose_hook(e.win, ft_put_fdf, &e);
-		mlx_loop(e.mlx);
+		ft_mlx(&e);
+		ft_freestyle(&e);
 	}
 	return (0);
 }
