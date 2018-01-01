@@ -28,14 +28,16 @@ int		ft_help(void)
 {
 	ft_printf(0, "usage: ./fdf [map]\n");
 	ft_printf(0, "sample map:\n");
-	ft_printf(0, "0 0 0 0 0 0 0 0 0 0\n");
-	ft_printf(0, "0 4 4 0 0 0 2 2 2 0\n");
-	ft_printf(0, "0 4 0 0 0 0 0 0 2 0\n");
-	ft_printf(0, "0 4 0 4 0 0 2 2 2 0\n");
-	ft_printf(0, "0 4 4 4 4 0 2 0 0 0\n");
-	ft_printf(0, "0 0 0 4 0 0 2 2 2 0\n");
-	ft_printf(0, "0 0 0 4 0 0 0 0 0 0\n");
-	ft_printf(0, "0 0 0 0 0 0 0 0 0 0\n");
+	ft_printf(0, "0 0 0 0 0 0 0 0 0 0 0 0\n");
+	ft_printf(0, "0 0 0 0 0 0 0 0 0 0 0 0\n");
+	ft_printf(0, "0 0 4 4 0 0 0 2 2 2 0 0\n");
+	ft_printf(0, "0 0 4 0 0 0 0 0 0 2 0 0\n");
+	ft_printf(0, "0 0 4 0 4 0 0 2 2 2 0 0\n");
+	ft_printf(0, "0 0 4 4 4 4 0 2 0 0 0 0\n");
+	ft_printf(0, "0 0 0 0 4 0 0 2 2 2 0 0\n");
+	ft_printf(0, "0 0 0 0 4 0 0 0 0 0 0 0\n");
+	ft_printf(0, "0 0 0 0 0 0 0 0 0 0 0 0\n");
+	ft_printf(0, "0 0 0 0 0 0 0 0 0 0 0 0\n");
 	ft_printf(0, "Good luck !\n");
 	return (0);
 }

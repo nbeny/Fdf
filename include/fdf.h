@@ -14,8 +14,8 @@
 # define FDF_H
 # define WIN_X 1200
 # define WIN_Y 900
-# define PIX 4
-# define AXE_Z 10
+# define PIX 10
+# define AXE_Z 5
 # define DOT_X (WIN_X / 2)
 # define DOT_Y (WIN_Y / 2)
 # include "../ft_printf/include/ft_printf.h"
