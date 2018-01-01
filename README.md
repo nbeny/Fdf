@@ -12,11 +12,11 @@
 - [X] ./fdf help renvois l'usage d'utilisation
 
 
-  Affichage de l'aide:
+`Affichage de l'aide`
 
 ![help](https://i.imgur.com/LjfmwHt.png)
 
 
-  Quelque gestion d'erreur et clarete du code:
+`Quelque gestion d'erreur et clarete du code`
 
 ![main](https://i.imgur.com/sdMm2RN.png)
