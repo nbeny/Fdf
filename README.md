@@ -4,7 +4,7 @@
 ##### Grade ``(117/100)`` ``(117/125)*``
 --------  -----------------------
 
-![42 graph](https://imgur.com/PqgJT8k)
+![42 graph](https://imgur.com/hQ57ZSC)
 
 - [X] Treer un tableau de structure pour classee les coordonnees
 - [X] Tracer une ligne d un point a un autre de l ecran
@@ -19,4 +19,4 @@ affichage de l'aide:
 
 Quelque gestion d'erreur et clarete du code:
 
-![main.c](https://imgur.com/kPT7oHS)
+![main.c](https://imgur.com/sdMm2RN)
