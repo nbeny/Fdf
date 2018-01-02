@@ -1,7 +1,7 @@
 # Project Fdf
 >>>> ##### exploration project.
 `date: november 2016`
-##### Grade ``(117/100)`` ``(117/125)*``
+##### Grade ``(101/100)`` ``(101/125)*``
 --------  -----------------------
 
 ![42graph](https://i.imgur.com/hQ57ZSC.png)
