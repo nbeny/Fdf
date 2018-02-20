@@ -65,7 +65,8 @@ int		ft_transform_map(t_env *e, char **av)
 	i = 0;
 	if (!(e->mapi = (int **)malloc(sizeof(int *) * (e->s_y + 1))))
 		return (0);
-	fd = open(av[1], O_RDONLY);
+	if ((fd = open(av[1], O_RDONLY)) == -1)
+		exit(EXIT_FAILURE);
 	get_next_line(fd, &line);
 	e->s_x = ft_len(line);
 	if ((e->mapi[i] = ft_char_to_int(line)) == NULL)
